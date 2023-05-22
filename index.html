@@ -8,5 +8,92 @@
     <script src="app.js" defer></script>
     <title>Форма оплаты Hubus help</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <img src="/img/logo.png" alt="Логотип организации" />
+      <h2>Hubus <span>Help!</span> <span>Pay</span></h2>
+      <div>
+        <a href="tel:88005555500">8 800 55555 00</a>
+        <a href="https://hubus.pro/" target="_blank">Hubus & Co.</a>
+      </div>
+    </header>
+    <main class="main">
+      <section class="slider">
+        <p>
+          159 024 103 ₽<br />
+          Маркетплейс благотворительности
+        </p>
+
+        <ul>
+          <li>
+            <div>
+              <button class="prev"></button>
+              <img src="" alt="Логотип фонда" />
+              <button class="next"></button>
+            </div>
+            <div>
+              <span>43 000 ₽</span>
+              <p>
+                Благотворительный фонд <br />
+                БФ “Творящие добро”
+              </p>
+            </div>
+
+            <a href="">Кому мы помогли?</a>
+          </li>
+        </ul>
+      </section>
+      <section class="payment-form">
+        <p>Ваша благодарность и общая помощь</p>
+        <form action="" method="post">
+          <input type="text" />
+
+          <div>
+            <label for="amount-min">
+              7 ₽
+              <input type="checkbox" name="amount-min" id="amount-min" />
+            </label>
+
+            <div>
+              <label for="average-min-amount">
+                49 ₽
+                <input type="radio" name="average-amount" id="average-min-amount" />
+              </label>
+              <label for="average-max-amount">
+                159 ₽
+                <input type="radio" name="average-amount" id="average-max-amount" />
+              </label>
+            </div>
+
+            <label for="amount-max">
+              599 ₽
+              <input type="checkbox" name="amount-max" id="amount-max" />
+            </label>
+          </div>
+
+          <button type="submit">Отправить <span>Благодарность!</span></button>
+        </form>
+        <p>Все данные под надёжной защитой 🔐</p>
+      </section>
+
+      <section class="paid">
+        <span>20 <span>октября</span> 2022</span>
+
+        <ul>
+          <li><span>+100 ₽ </span>Виктор</li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <div>
+        <img src="/img/pci-logo.png" alt="Логотип стандарта защиты оплаты - PCI DSS" />
+        <img src="/img/mastercard-logo.png" alt="Логотип MasterCard" />
+        <img src="/img/visa-logo.png" alt="Логотип Visa" />
+      </div>
+      <div>
+        <p>Первый в Мире <span>сервис открытой Благотворительности 💳</span></p>
+        <p>2022 Все права <span>Hubus & Co</span></p>
+      </div>
+    </footer>
+  </body>
 </html>
