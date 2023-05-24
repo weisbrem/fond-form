@@ -1,99 +1,135 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="page">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      href="fonts/FuturaMediumC.woff"
+      type="font/woff"
+      as="font"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
     <title>Форма оплаты Hubus help</title>
   </head>
-  <body>
-    <header class="header">
-      <img src="/img/logo.png" alt="Логотип организации" />
-      <h2>Hubus <span>Help!</span> <span>Pay</span></h2>
-      <div>
-        <a href="tel:88005555500">8 800 55555 00</a>
-        <a href="https://hubus.pro/" target="_blank">Hubus & Co.</a>
-      </div>
-    </header>
-    <main class="main">
-      <section class="slider">
-        <p>
-          159 024 103 ₽<br />
-          Маркетплейс благотворительности
-        </p>
+  <body class="page__body">
+    <div class="container">
+      <header class="header">
+        <img src="./img/logo.png" alt="Логотип организации" />
+        <h2>Hubus <span>Help!</span> <span>Pay</span></h2>
+        <div>
+          <a href="tel:88005555500">8 800 55555 00</a>
+          <a href="https://hubus.pro/" target="_blank">Hubus & Co.</a>
+        </div>
+      </header>
+    </div>
+    <div class="container">
+      <main class="main">
+        <section class="slider">
+          <p>
+            <span>159 024 103 ₽</span><br />
+            Маркетплейс благотворительности
+          </p>
 
-        <ul>
-          <li>
-            <div>
-              <button class="prev"></button>
-              <img src="" alt="Логотип фонда" />
-              <button class="next"></button>
-            </div>
-            <div>
-              <span>43 000 ₽</span>
-              <p>
-                Благотворительный фонд <br />
-                БФ “Творящие добро”
-              </p>
-            </div>
+          <ul>
+            <li>
+              <div>
+                <button class="prev"></button>
+                <div style="background-image: url(./img/fonds/amegaPrint.png)"></div>
+                <button class="next"></button>
+              </div>
+              <div>
+                <span>43 000 ₽</span>
+                <p>
+                  Благотворительный фонд <br />
+                  БФ “Творящие добро”
+                </p>
+              </div>
 
-            <a href="">Кому мы помогли?</a>
-          </li>
-        </ul>
-      </section>
-      <section class="payment-form">
-        <p>Ваша благодарность и общая помощь</p>
-        <form action="" method="post">
-          <input type="text" />
+              <a class="btn" href="">Кому мы помогли?</a>
+            </li>
+          </ul>
+        </section>
+        <section class="payment">
+          <div class="payment-form__content">
+            <p>Ваша благодарность и общая помощь</p>
+            <form class="payment-form" action="" method="post">
+              <div>
+                <input type="text" name="name" id="name" />
+                <label for="name">Имя</label>
+              </div>
 
-          <div>
-            <label for="amount-min">
-              7 ₽
-              <input type="checkbox" name="amount-min" id="amount-min" />
-            </label>
+              <ul class="payment-form__selection">
+                <li>
+                  <input
+                    class="payment-form--input visually-hidden"
+                    type="checkbox"
+                    name="amount-min"
+                    id="amount-min"
+                    checked
+                  />
+                  <label class="payment-form--label" for="amount-min"> 7 ₽ </label>
+                </li>
+                <li>
+                  <input
+                    class="payment-form--input visually-hidden"
+                    type="radio"
+                    name="average-amount"
+                    id="average-min-amount"
+                  />
+                  <label class="payment-form--label mr--10" for="average-min-amount"> 49 ₽ </label>
+                  <input
+                    class="payment-form--input visually-hidden"
+                    type="radio"
+                    name="average-amount"
+                    id="average-max-amount"
+                  />
+                  <label class="payment-form--label ml--10" for="average-max-amount"> 159 ₽ </label>
+                </li>
+                <li>
+                  <input
+                    class="payment-form--input visually-hidden"
+                    type="checkbox"
+                    name="amount-max"
+                    id="amount-max"
+                  />
+                  <label class="payment-form--label" for="amount-max"> 599 ₽ </label>
+                </li>
+              </ul>
 
-            <div>
-              <label for="average-min-amount">
-                49 ₽
-                <input type="radio" name="average-amount" id="average-min-amount" />
-              </label>
-              <label for="average-max-amount">
-                159 ₽
-                <input type="radio" name="average-amount" id="average-max-amount" />
-              </label>
-            </div>
-
-            <label for="amount-max">
-              599 ₽
-              <input type="checkbox" name="amount-max" id="amount-max" />
-            </label>
+              <button class="btn" type="submit">Отправить <span>Благодарность!</span></button>
+            </form>
+            <p><span>Все данные под надёжной защитой</span> 🔐</p>
           </div>
 
-          <button type="submit">Отправить <span>Благодарность!</span></button>
-        </form>
-        <p>Все данные под надёжной защитой 🔐</p>
-      </section>
+          <div>
+            <img src="./img/pci-logo.png" alt="Логотип стандарта защиты оплаты - PCI DSS" />
+            <img src="./img/mastercard-logo.png" alt="Логотип MasterCard" />
+            <img src="./img/visa-logo.png" alt="Логотип Visa" />
+          </div>
+        </section>
 
-      <section class="paid">
-        <span>20 <span>октября</span> 2022</span>
+        <section class="paid">
+          <span class="paid__date">20 <span>октября</span> 2022</span>
 
-        <ul>
-          <li><span>+100 ₽ </span>Виктор</li>
-        </ul>
-      </section>
-    </main>
-    <footer class="footer">
-      <div>
-        <img src="/img/pci-logo.png" alt="Логотип стандарта защиты оплаты - PCI DSS" />
-        <img src="/img/mastercard-logo.png" alt="Логотип MasterCard" />
-        <img src="/img/visa-logo.png" alt="Логотип Visa" />
-      </div>
-      <div>
+          <ul class="paid__list">
+            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
+            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
+            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
+            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
+            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
+            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
+            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
+          </ul>
+        </section>
+      </main>
+      <footer class="footer">
         <p>Первый в Мире <span>сервис открытой Благотворительности 💳</span></p>
         <p>2022 Все права <span>Hubus & Co</span></p>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>
