@@ -7,7 +7,7 @@ const MILLISEC_IN_DAY = 86_400_000;
 setInterval(() => {
   Procent = Math.floor((Number(sum) / 100) * 0.1);
 
-  result = +sum + Procent;
+  result = Number(sum) + Procent;
 
   totalSum.textContent = `${result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} ₽`;
 }, MILLISEC_IN_DAY);
