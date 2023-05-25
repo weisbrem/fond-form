@@ -217,7 +217,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  background-image: url('./img/arrow-left.svg');
+  background-image: url('../img/arrow-left.svg');
   background-repeat: no-repeat;
 }
 
@@ -234,7 +234,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  background-image: url('./img/arrow-right.svg');
+  background-image: url('../img/arrow-right.svg');
   background-repeat: no-repeat;
 }
 
