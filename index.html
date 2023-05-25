@@ -12,6 +12,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css" />
+    <script src="./libs/swiper/swiper-bundle.min.js" defer></script>
     <script src="app.js" defer></script>
     <title>Форма оплаты Hubus help</title>
   </head>
@@ -28,17 +30,33 @@
     </header>
     <main class="main">
       <div class="container container--main">
-        <section class="slider">
+        <section class="swiper slider">
           <p>
-            <span>159 024 103 ₽</span><br />
+            <span class="slider__total-sum">159 024 103 ₽</span><br />
             Маркетплейс благотворительности
           </p>
 
-          <ul>
-            <li>
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
               <div>
                 <button class="prev"></button>
                 <div style="background-image: url(./img/fonds/amegaPrint.png)"></div>
+                <button class="next"></button>
+              </div>
+              <div>
+                <span>43 000 ₽</span>
+                <p>
+                  Благотворительный фонд <br />
+                  БФ “Творящие добро”
+                </p>
+              </div>
+
+              <a class="btn" href="">Кому мы помогли?</a>
+            </li>
+            <li class="swiper-slide">
+              <div>
+                <button class="prev"></button>
+                <div style="background-image: url(./img/fonds/artSquare.png)"></div>
                 <button class="next"></button>
               </div>
               <div>

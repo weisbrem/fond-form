@@ -156,8 +156,12 @@
 /* Slider */
 .slider {
   grid-area: slider;
-
   margin-bottom: 50px;
+
+  /* 162-164 => Для правильных расчетов ширины слайдов в swiper */
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .slider > p {
@@ -367,7 +371,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
 
   margin-bottom: 50px;
 }
@@ -553,6 +557,7 @@
 
   .container--main {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: start;
     gap: 60px;
 
