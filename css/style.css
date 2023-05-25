@@ -153,12 +153,20 @@
   margin-bottom: 50px;
 }
 
+.container--main {
+  display: grid;
+  grid-template-areas:
+    'slider'
+    'payment'
+    'paid';
+}
+
 /* Slider */
 .slider {
   grid-area: slider;
   margin-bottom: 50px;
 
-  /* 162-164 => Для правильных расчетов ширины слайдов в swiper */
+  /* 162-164 => Для правильных расчетов ширины слайдов в swiper на десктопе */
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
@@ -178,7 +186,8 @@
 }
 
 .slider > ul > li {
-  display: grid;
+  display: flex;
+  flex-direction: column;
 }
 
 .slider > ul > li > a {
@@ -374,6 +383,8 @@
   align-items: center;
   gap: 20px;
 
+  min-width: 450px;
+
   margin-bottom: 50px;
 }
 
@@ -393,7 +404,7 @@
   color: var(--green);
 
   border-radius: 53px;
-  padding: 18px 22px;
+  padding: 18px 16px;
   cursor: pointer;
 
   transition: background-color 0.7s ease-in;
@@ -525,8 +536,55 @@
     padding-top: 40px;
   }
 
-  .payment-form > div:nth-child(1) > label {
-    left: 10px;
+  .header > .container > img {
+    margin-bottom: 50px;
+  }
+
+  .header > .container > h2 {
+    font-size: 60px;
+    margin-bottom: 50px;
+  }
+
+  .slider > p {
+    font-size: 30px;
+
+    margin-bottom: 80px;
+  }
+
+  .slider > ul > li > div:nth-child(2) > span,
+  .slider > ul > li > div:nth-child(2) > p {
+    font-size: 25px;
+  }
+
+  .slider > ul > li > a {
+    font-size: 20px;
+    padding: 20px 50px;
+  }
+
+  .payment-form__content > p:nth-child(1) {
+    font-size: 35px;
+    margin-bottom: 60px;
+  }
+
+  .payment-form > div:nth-child(1) > input {
+    width: 100%;
+  }
+
+  .payment-form > .payment-form__selection {
+    gap: 50px;
+    margin-bottom: 70px;
+  }
+
+  .paid__date {
+    font-size: 25px;
+  }
+
+  .paid__item {
+    font-size: 20px;
+  }
+
+  .footer > .container > p {
+    font-size: 20px;
   }
 }
 
@@ -583,7 +641,7 @@
   }
 
   .payment-form--label {
-    font-size: 30px;
+    font-size: 25px;
     line-height: 40px;
   }
 

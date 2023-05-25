@@ -14,6 +14,7 @@ setInterval(() => {
 
 const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
+  centeredSlides: true,
   navigation: {
     nextEl: '.next',
     prevEl: '.prev',
