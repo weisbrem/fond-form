@@ -1,3 +1,9 @@
+<?php
+  require_once 'config/connect.php';
+  $paids = mysqli_query($connect, "SELECT * FROM `paid`");
+  $paids = mysqli_fetch_all($paids);
+?>
+
 <!DOCTYPE html>
 <html lang="ru" class="page">
   <head>
@@ -11,7 +17,7 @@
       as="font"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css" />
     <script src="./libs/swiper/swiper-bundle.min.js" defer></script>
     <script src="app.js" defer></script>
@@ -269,7 +275,7 @@
         <section class="payment">
           <div class="payment-form__content">
             <p>Ваша благодарность и общая помощь</p>
-            <form class="payment-form" action="" method="post">
+            <form class="payment-form" action="vendor/create.php" method="post">
               <div>
                 <input type="text" name="name" id="name" />
                 <label for="name">Имя</label>
@@ -282,6 +288,7 @@
                     type="checkbox"
                     name="amount-min"
                     id="amount-min"
+                    value="7"
                     checked
                   />
                   <label class="payment-form--label" for="amount-min"> 7 ₽ </label>
@@ -292,6 +299,7 @@
                     type="radio"
                     name="average-amount"
                     id="average-min-amount"
+                    value="49"
                   />
                   <label class="payment-form--label mr--10" for="average-min-amount"> 49 ₽ </label>
                   <input
@@ -299,6 +307,7 @@
                     type="radio"
                     name="average-amount"
                     id="average-max-amount"
+                    value="159"
                   />
                   <label class="payment-form--label ml--10" for="average-max-amount"> 159 ₽ </label>
                 </li>
@@ -308,6 +317,7 @@
                     type="checkbox"
                     name="amount-max"
                     id="amount-max"
+                    value="599"
                   />
                   <label class="payment-form--label" for="amount-max"> 599 ₽ </label>
                 </li>
@@ -329,13 +339,13 @@
           <span class="paid__date">20 <span>октября</span> 2022</span>
 
           <ul class="paid__list">
-            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
-            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
-            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
-            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
-            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
-            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
-            <li class="paid__item"><span>+100 ₽ </span>Виктор</li>
+            <?php
+              foreach($paids as $paid) {
+                ?>
+                <li class="paid__item"><span>+<?= $paid[2] ?> ₽ </span><?= $paid[1] ?></li>
+                <?php
+              }
+            ?>
           </ul>
         </section>
       </div>
