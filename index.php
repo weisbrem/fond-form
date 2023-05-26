@@ -1,5 +1,7 @@
 <?php
   require_once 'config/connect.php';
+  require 'utils/fake_paids.php';
+
   if ($connect) {
     $paids = mysqli_query($connect, "SELECT * FROM `paid`");
     $paids = mysqli_fetch_all($paids);
@@ -337,7 +339,8 @@
           </div>
         </section>
 
-        <?php 
+        <?php
+          // Если есть соединение с БД - выводим данные из БД
           if ($connect) {
             ?>
             <section class="paid">
@@ -347,13 +350,35 @@
                 <?php
                   foreach($paids as $paid) {
                     ?>
-                    <li class="paid__item"><span>+<?= $paid[2] ?> ₽ </span><?= $paid[1] ?></li>
+                    <li class="paid__item">
+                      <span>+<?= $paid[1] ?> ₽ </span><?= $paid[0] ?>
+                    </li>
                     <?php
                   }
                 ?>
               </ul>
             </section>
             <?php 
+          }
+
+          // Если нет соединения с БД - выводим фейковые платежи
+          if (!$connect) {
+            ?>
+            <section class="paid">
+              <span class="paid__date">20 <span>октября</span> 2022</span>
+              
+              <ul class="paid__list">
+
+              <?php
+                  foreach($fake_paids as $paid) {
+                    ?>
+                    <li class="paid__item"><span>+<?= $paid[1] ?> ₽ </span><?= $paid[0] ?></li>
+                    <?php
+                  }
+                ?>
+              </ul>
+            </section>
+            <?php
           }
         ?>
       </div>
