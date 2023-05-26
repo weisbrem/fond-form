@@ -1,7 +1,9 @@
 <?php
   require_once 'config/connect.php';
-  $paids = mysqli_query($connect, "SELECT * FROM `paid`");
-  $paids = mysqli_fetch_all($paids);
+  if ($connect) {
+    $paids = mysqli_query($connect, "SELECT * FROM `paid`");
+    $paids = mysqli_fetch_all($paids);
+  }
 ?>
 
 <!DOCTYPE html>
@@ -335,19 +337,25 @@
           </div>
         </section>
 
-        <section class="paid">
-          <span class="paid__date">20 <span>октября</span> 2022</span>
-
-          <ul class="paid__list">
-            <?php
-              foreach($paids as $paid) {
-                ?>
-                <li class="paid__item"><span>+<?= $paid[2] ?> ₽ </span><?= $paid[1] ?></li>
-                <?php
-              }
+        <?php 
+          if ($connect) {
             ?>
-          </ul>
-        </section>
+            <section class="paid">
+              <span class="paid__date">20 <span>октября</span> 2022</span>
+    
+              <ul class="paid__list">
+                <?php
+                  foreach($paids as $paid) {
+                    ?>
+                    <li class="paid__item"><span>+<?= $paid[2] ?> ₽ </span><?= $paid[1] ?></li>
+                    <?php
+                  }
+                ?>
+              </ul>
+            </section>
+            <?php 
+          }
+        ?>
       </div>
     </main>
     <footer class="footer">
